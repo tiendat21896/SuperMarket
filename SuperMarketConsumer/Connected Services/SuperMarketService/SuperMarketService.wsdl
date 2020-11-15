@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SuperMarketService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51519/SuperMarketService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51519/SuperMarketService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51519/SuperMarketService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMServiceApplication" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISuperMarketService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetPayments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPayments" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetPayments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPayment" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPayment" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeletePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePayment" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeletePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRole" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRole" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviders" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_GetProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_AddProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_EditProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProvider" />
+  </wsdl:message>
+  <wsdl:message name="ISuperMarketService_DeleteProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProviderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISuperMarketService">
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetCustomers" message="tns:ISuperMarketService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetCustomersResponse" message="tns:ISuperMarketService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddCustomer" message="tns:ISuperMarketService_AddCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddCustomerResponse" message="tns:ISuperMarketService_AddCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditCustomer" message="tns:ISuperMarketService_EditCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditCustomerResponse" message="tns:ISuperMarketService_EditCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteCustomer" message="tns:ISuperMarketService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteCustomerResponse" message="tns:ISuperMarketService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetCategories" message="tns:ISuperMarketService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetCategoriesResponse" message="tns:ISuperMarketService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddCategory" message="tns:ISuperMarketService_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddCategoryResponse" message="tns:ISuperMarketService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditCategory" message="tns:ISuperMarketService_EditCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditCategoryResponse" message="tns:ISuperMarketService_EditCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteCategory" message="tns:ISuperMarketService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteCategoryResponse" message="tns:ISuperMarketService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetProducts" message="tns:ISuperMarketService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetProductsResponse" message="tns:ISuperMarketService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddProduct" message="tns:ISuperMarketService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddProductResponse" message="tns:ISuperMarketService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditProduct" message="tns:ISuperMarketService_EditProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditProductResponse" message="tns:ISuperMarketService_EditProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteProduct" message="tns:ISuperMarketService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteProductResponse" message="tns:ISuperMarketService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetOrders" message="tns:ISuperMarketService_GetOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetOrdersResponse" message="tns:ISuperMarketService_GetOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddOrder" message="tns:ISuperMarketService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddOrderResponse" message="tns:ISuperMarketService_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditOrder" message="tns:ISuperMarketService_EditOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditOrderResponse" message="tns:ISuperMarketService_EditOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteOrder" message="tns:ISuperMarketService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteOrderResponse" message="tns:ISuperMarketService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetOrderDetails" message="tns:ISuperMarketService_GetOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetOrderDetailsResponse" message="tns:ISuperMarketService_GetOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddOrderDetail" message="tns:ISuperMarketService_AddOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddOrderDetailResponse" message="tns:ISuperMarketService_AddOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditOrderDetail" message="tns:ISuperMarketService_EditOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditOrderDetailResponse" message="tns:ISuperMarketService_EditOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteOrderDetail" message="tns:ISuperMarketService_DeleteOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteOrderDetailResponse" message="tns:ISuperMarketService_DeleteOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetPayments" message="tns:ISuperMarketService_GetPayments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetPaymentsResponse" message="tns:ISuperMarketService_GetPayments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddPayment" message="tns:ISuperMarketService_AddPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddPaymentResponse" message="tns:ISuperMarketService_AddPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditPayment" message="tns:ISuperMarketService_EditPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditPaymentResponse" message="tns:ISuperMarketService_EditPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeletePayment" message="tns:ISuperMarketService_DeletePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeletePaymentResponse" message="tns:ISuperMarketService_DeletePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetEmployees" message="tns:ISuperMarketService_GetEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetEmployeesResponse" message="tns:ISuperMarketService_GetEmployees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddEmployee" message="tns:ISuperMarketService_AddEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddEmployeeResponse" message="tns:ISuperMarketService_AddEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditEmployee" message="tns:ISuperMarketService_EditEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditEmployeeResponse" message="tns:ISuperMarketService_EditEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteEmployee" message="tns:ISuperMarketService_DeleteEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteEmployeeResponse" message="tns:ISuperMarketService_DeleteEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetRoles" message="tns:ISuperMarketService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetRolesResponse" message="tns:ISuperMarketService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddRole" message="tns:ISuperMarketService_AddRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddRoleResponse" message="tns:ISuperMarketService_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditRole" message="tns:ISuperMarketService_EditRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditRoleResponse" message="tns:ISuperMarketService_EditRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteRole" message="tns:ISuperMarketService_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteRoleResponse" message="tns:ISuperMarketService_DeleteRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/GetProviders" message="tns:ISuperMarketService_GetProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/GetProvidersResponse" message="tns:ISuperMarketService_GetProviders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/AddProvider" message="tns:ISuperMarketService_AddProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/AddProviderResponse" message="tns:ISuperMarketService_AddProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/EditProvider" message="tns:ISuperMarketService_EditProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/EditProviderResponse" message="tns:ISuperMarketService_EditProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteProvider" message="tns:ISuperMarketService_DeleteProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperMarketService/DeleteProviderResponse" message="tns:ISuperMarketService_DeleteProvider_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISuperMarketService" type="tns:ISuperMarketService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditOrder">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayments">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPayment">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPayment">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePayment">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeletePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditEmployee">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRole">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviders">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/GetProviders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProvider">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/AddProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProvider">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/EditProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProvider">
+      <soap:operation soapAction="http://tempuri.org/ISuperMarketService/DeleteProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SuperMarketService">
+    <wsdl:port name="BasicHttpBinding_ISuperMarketService" binding="tns:BasicHttpBinding_ISuperMarketService">
+      <soap:address location="http://localhost:51519/SuperMarketService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
